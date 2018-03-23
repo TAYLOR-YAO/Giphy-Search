@@ -1,0 +1,95 @@
+html{
+    width: 960px;
+    margin: 0px auto;
+}
+h1{
+    border: 3px double rgb(94, 92, 92);
+    border-radius: 50px;
+    color: white;
+    text-align:center;
+    background-color: dodgerblue;
+}
+button{
+    border-radius: 5px;
+    margin-right: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+#show{
+    margin-left: 10px;
+    height: 60px;
+}
+#grid{
+    margin-left: 10px;
+}
+#submit{
+    height: 30px;
+    margin-top: 10px;
+    text-align: center;
+}
+span{
+    margin-bottom: 15px;
+    position: relative;
+    bottom: 5px;
+}
+img{ 
+     width: 150px;
+     margin: 10px; 
+     height: 200px; 
+     float: left;
+    }
+    footer{
+        background-color:dodgerblue;
+        text-align: center;
+        position: static;
+        top: 600px;
+    }
+
+
+
+
+
+/* MEDIA QUERY */
+@media screen and (max-width: 375px) {
+ 
+    #show{
+        width:75%;
+      
+    }
+    #show{
+        height: 150px;
+       
+        width: 100%;
+    }
+    body{
+        margin: 0px auto;
+    }
+    #adder{
+        position:absolute;
+        top: 80px;
+        left: 260%;
+    }
+    #images{
+        position: absolute;
+        top: 150px;
+        width: 190%;
+        margin: 10px;
+        text-align: center;
+    }
+    
+    #inputText{
+        width: 150px;
+    }
+    h1{
+        text-align: center;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        position: relative;
+        left: 200px;
+    }
+  
+    
+ }
+
+
+

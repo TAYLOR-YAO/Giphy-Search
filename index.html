@@ -5,32 +5,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>giphy</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="assets/css/reset.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
     <div class="container-fluid">
-            <h1 style="text-align:center">GIPHY IMAGES</h1>
-            <div id="show">
+            <h1 >GIPHY IMAGES</h1>
+            <div class="row" id="show" >
                 <h6 class="buttons"></h6>
             </div>
             <br>
-            <div class="row">
-                <div class="col-9" >                  
+            <div class="row" id="grid">
+                <div class="col-9">
                     <div class="row" id="images"></div>
-                </div>
+                </div> 
                 <div class="col-3" id="adder">
                     <form id="form">
-                        <label for="artist-input">Choose Your Player</label>
+                        <label for="artist-input" id="inputText">Choose Your Images</label>
                         <input type="text" value="" id="input" placeholder="Search"><br>
-                        <button id="submit" type="button" class="btn btn-info submit">Submit</button>
-                    </form>
-                    
+                        <button id="submit" type="button" class="btn btn-info submit"><span>Submit</span> </span></button>
+                    </form>     
                 </div>
-            </div>     
     </div>
+ 
     
     <script src="assets/javascript/giphy.js"></script>
 </body>
