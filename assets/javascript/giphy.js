@@ -3,45 +3,47 @@ var submit = $("#submit");
 var names = ["Nelson Mandela", "Etoo", "Black Panther", "Wonder Woman"]
 var myApiKey = "3spo5yNpHgbAbeBBWth9U1W6kG1ibNkA";
 var inputValue = $("#input").val().trim();
+var getBtnValue;
 
 $(document).ready(function(){
+   
 
-    function setButton(){
-        $(".buttons").empty();
-        for(var i=0; i<names.length; i++){
-            var newbtn = $("<button>").text(names[i]);
-            newbtn.addClass("submit");
-            $(".buttons").append(newbtn);
-            var getBtnValue = names[i].valueOf(names[i]);                
-            console.log( " this is the buton value :" + getBtnValue);
-            $("button").css({" margin": "20px", "background-color": "teal", "color": "white", });
-            buttonImages();
+        function setButton(){
+            $(".buttons").empty();
+            for(var i=0; i<names.length; i++){
+                var newbtn = $("<button>").text(names[i]);
+                newbtn.addClass("submit");
+                $(".buttons").append(newbtn);
+                newbtn.attr("value", names[i]);
+                $("button").css({" margin": "20px", "background-color": "teal", "color": "white", });
+               
+            }
+            
         }
-        function buttonImages(){
-            $(".buttons").on("click",newbtn , function(){
-                $.ajax({
-                    url:"http://api.giphy.com/v1/gifs/search?q=" + getBtnValue + "&api_key=" + myApiKey + "&limit=10",
-                    method:"GET"
-                }).then(function(response){
-                    var dataResults = response.data;
-                    for(a=0; a<dataResults.length; a++){
-                        var arrayDiv = $("<div>");
-                        console.log(response);
-                        console.log( "This is the response URL:"+ "" + dataResults[a].images.original.url);
-                        var ratingPar = $("<p>").text("Rating:" + dataResults[a].rating);
-                        var inputImage = $("<img>");
-                        inputImage.attr('src', dataResults[a].images.original.url)
-                        arrayDiv.append(ratingPar);
-                        arrayDiv.append(inputImage);
-                        $("#images").prepend(arrayDiv);
-                        $("img").css({" width": "100px", "margin": "5px", "height": "100px", "float":"left" });            
-                    }
-                   
-                });
+        $(".buttons").on("click",".submit" , function(){
+            var getBtnValue = $(this).attr("value");
+          console.log( " this is the buton value :" + getBtnValue);
+            $.ajax({
+                url:"http://api.giphy.com/v1/gifs/search?q=" + getBtnValue + "&api_key=" + myApiKey + "&limit=10",
+                method:"GET"
+            }).then(function(response){
+                var dataResults = response.data;
+                for(a=0; a<dataResults.length; a++){
+                    var arrayDiv = $("<div>");
+                    console.log(response);
+                    console.log( "This is the response URL:"+ "" + dataResults[a].images.original.url);
+                    var ratingPar = $("<p>").text("Rating:" + dataResults[a].rating);
+                    var inputImage = $("<img>");
+                    inputImage.attr('src', dataResults[a].images.original.url)
+                    arrayDiv.append(ratingPar);
+                    arrayDiv.append(inputImage);
+                    $("#images").prepend(arrayDiv);
+                    $("img").css({" width": "100px", "margin": "5px", "height": "100px", "float":"left" });            
+                }
+               
             });
-        }
-    }
-    setButton();
+        });
+        setButton();
 
     function addinput (){
         submit.on("click",function(){
