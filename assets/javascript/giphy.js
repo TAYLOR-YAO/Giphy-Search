@@ -32,7 +32,7 @@ $(document).ready(function () {
         var getBtnValue = $(this).attr("value");
         console.log(" this is the buton value :" + getBtnValue);
         $.ajax({
-            url: "http://api.giphy.com/v1/gifs/search?q=" + getBtnValue + "&api_key=" + myApiKey + "&limit=10",
+            url: "https://api.giphy.com/v1/gifs/search?q=" + getBtnValue + "&api_key=" + myApiKey + "&limit=10",
             method: "GET"
         }).then(function (response) {
             var dataResults = response.data;
