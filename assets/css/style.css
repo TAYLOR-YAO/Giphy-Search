@@ -38,49 +38,54 @@ img{
      height: 200px; 
      float: left;
     }
- 
+input{
+    border: 3px solid dodgerblue;
+}
 
 
 /* MEDIA QUERY */
 @media screen and (max-width: 375px) {
  
-    #show{
-        width:75%;
-      
+    html{
+        width:100%; 
     }
     #show{
-        height: 150px;
-       
-        width: 100%;
-    }
-    body{
-        margin: 0px auto;
-    }
-    #adder{
-        position:absolute;
-        top: 80px;
-        left: 260%;
-    }
-    #images{
-        position: absolute;
-        top: 150px;
-        width: 190%;
-        margin: 10px;
-        text-align: center;
-    }
-    
-    #inputText{
-        width: 150px;
-    }
-    h1{
-        text-align: center;
-        margin-top: 10px;
-        margin-bottom: 10px;
         position: relative;
-        left: 200px;
+        top: 110px;
     }
-  
+    #grid{
+        position: relative;
+        top: 160px;
+    }
+   #adder{
+      
+    position: relative;
+    bottom: 220px;
+    right: 230px;
+    font-size: 12px;
+    }
+    label{
+        width: 200px !important;
+
+    }
+    #adder button{
+        position: relative;
+        left: 150px;
+        bottom: 36px;
+    }
     
+ }
+
+
+ @media screen and (max-width: 320px) {
+     html{
+        width: 100%;
+     }
+     #adder{
+      
+        position: relative;
+        right: 215px;
+    }
  }
 
 
