@@ -48,6 +48,7 @@ input{
  
     html{
         width:100%; 
+        margin: auto;
     }
     #show{
         position: relative;
@@ -70,7 +71,7 @@ input{
     }
     #adder button{
         position: relative;
-        left: 150px;
+        left: 180px;
         bottom: 36px;
     }
     
@@ -80,6 +81,11 @@ input{
  @media screen and (max-width: 320px) {
      html{
         width: 100%;
+        margin: auto;
+     }
+     img{
+         width: 100%;
+         margin: auto;
      }
      #adder{
       
